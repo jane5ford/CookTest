@@ -193,7 +193,7 @@ namespace Valve.VR.InteractionSystem
                 if (existingSkinned != null && highlightSkinned != null && attachedToHand == false)
                 {
                     highlightSkinned.transform.position = existingSkinned.transform.position;
-                    highlightSkinned.transform.rotation = existingSkinned.transform.rotation;
+                    highlightSkinned.transform.rotation = existingSkinned.transform.rotation; //хз что здесь происходит
                     highlightSkinned.transform.localScale = existingSkinned.transform.lossyScale;
                     highlightSkinned.localBounds = existingSkinned.localBounds;
                     highlightSkinned.enabled = isHovering && existingSkinned.enabled && existingSkinned.gameObject.activeInHierarchy;
@@ -217,7 +217,7 @@ namespace Valve.VR.InteractionSystem
                 if (existingRenderer != null && highlightRenderer != null && attachedToHand == false)
                 {
                     highlightRenderer.transform.position = existingRenderer.transform.position;
-                    highlightRenderer.transform.rotation = existingRenderer.transform.rotation;
+                    highlightRenderer.transform.rotation = existingRenderer.transform.rotation; //подсветка
                     highlightRenderer.transform.localScale = existingRenderer.transform.lossyScale;
                     highlightRenderer.enabled = isHovering && existingRenderer.enabled && existingRenderer.gameObject.activeInHierarchy;
                 }

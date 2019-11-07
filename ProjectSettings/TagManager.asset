@@ -6,6 +6,7 @@ TagManager:
   tags:
   - projectile
   - FxTemporaire
+  - Cut
   layers:
   - Default
   - TransparentFX
