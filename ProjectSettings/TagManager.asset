@@ -9,6 +9,8 @@ TagManager:
   - Cut
   - Board
   - Grate
+  - Pan
+  - Cooking
   layers:
   - Default
   - TransparentFX
