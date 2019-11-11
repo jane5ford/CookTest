@@ -15,11 +15,12 @@ public class GrateGameObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Gratable && transform.localScale.z != 0)
+        if (Gratable && transform.localScale.z > 0)
         {
             littlePiece = GameObject.Instantiate(LittlePiece, gameObject.transform.position, Quaternion.identity) as GameObject;
             gameObject.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z - 0.01f);
         }
+        if (transform.localScale.z <= 0) gameObject.SetActive(false);
        
     }
 

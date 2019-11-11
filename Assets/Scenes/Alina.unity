@@ -196,6 +196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Curtain (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ec5c46a0b8cb0954e9de8599ef601fc9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec5c46a0b8cb0954e9de8599ef601fc9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.999
@@ -1328,7 +1332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a37a77b367a84b34e95dfe0f707b51c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.63
+      value: 0.889
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a37a77b367a84b34e95dfe0f707b51c6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1549,7 +1553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4297064017948486, guid: 7bc3dd1f6f53d1f4aa64e2c26a7a360a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.511
+      value: 0.805
       objectReference: {fileID: 0}
     - target: {fileID: 4297064017948486, guid: 7bc3dd1f6f53d1f4aa64e2c26a7a360a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1616,6 +1620,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sink
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 9d5bab92528488040b85bcc8b9c1d382, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9d5bab92528488040b85bcc8b9c1d382, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.41656953
@@ -1675,7 +1683,7 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: 9d5bab92528488040b85bcc8b9c1d382, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a0434f3fd40b2724a915951e94c4b518, type: 2}
+      objectReference: {fileID: 2100000, guid: e04a4300d0596db4ba52a535422513d3, type: 2}
     - target: {fileID: 2300002, guid: 9d5bab92528488040b85bcc8b9c1d382, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2138,7 +2146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {fileID: 1947634833120802}
   anim: {fileID: 855026615}
-  xRot: 90
+  Angle: 90
 --- !u!1 &1784142469296448
 GameObject:
   m_ObjectHideFlags: 0
@@ -2197,7 +2205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054344101891736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.272, y: 1.213, z: -2.501}
+  m_LocalPosition: {x: 0.527, y: 1.213, z: -2.501}
   m_LocalScale: {x: 0.081764, y: 0.081764, z: 0.081764}
   m_Children:
   - {fileID: 4962765247272882}

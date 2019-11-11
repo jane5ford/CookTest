@@ -6,7 +6,7 @@ public class Pouring : MonoBehaviour
 {
     public GameObject pos;
     public GameObject anim;
-    public float xRot = 90f;
+    public float Angle = 90f;
     /*private bool rotatable;
     private void OnTriggerEnter(Collider other)
     {
@@ -22,9 +22,8 @@ public class Pouring : MonoBehaviour
 
     private void Update()
     {
-        if (transform.rotation.x >= xRot)
+        if (gameObject.transform.rotation.eulerAngles.z >= Angle)
         {
-            Debug.Log("kkkkkkkkk");
             anim.SetActive(true);
             anim.transform.position = pos.transform.position;
         } else
