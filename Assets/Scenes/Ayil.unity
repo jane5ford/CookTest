@@ -3565,7 +3565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1461161647
 Transform:
   m_ObjectHideFlags: 0
@@ -3591,7 +3591,11 @@ Transform:
   - {fileID: 970101644}
   - {fileID: 393367426}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 22
+=======
+  m_RootOrder: 17
+>>>>>>> 754eaf1e79f6e14531d5b994d61baed54c1c2dcb
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1543664195
 PrefabInstance:
