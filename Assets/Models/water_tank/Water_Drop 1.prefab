@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8653670292581486605}
-  m_LocalRotation: {x: 0.42337132, y: -0, z: -0, w: 0.90595627}
+  m_LocalRotation: {x: 0.019119, y: -0, z: -0, w: 0.99981725}
   m_LocalPosition: {x: -0.0132, y: 4.87, z: 1.63}
   m_LocalScale: {x: 0.01, y: 0.010000002, z: 0.010000003}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50.095, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.1910002, y: 0, z: 0}
 --- !u!198 &8653670292595923815
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -40,14 +40,14 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8653670292581486605}
   serializedVersion: 6
-  lengthInSec: 12.83
+  lengthInSec: 2.6
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 1
+  prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.57
+      scalar: 1.4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -168,7 +168,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.44
+      scalar: 7.174961
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -549,8 +549,8 @@ ParticleSystem:
     startRotation:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 6.283185
-      minScalar: 3.1415925
+      scalar: 6.62527
+      minScalar: 3.1311204
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -642,10 +642,10 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 2.4230285
+    angle: 0
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
+    radiusThickness: 0
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -728,7 +728,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.03601915
+      value: 18.020113
       mode: 0
       spread: 0
       speed:
@@ -847,7 +847,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4
+      scalar: 8.62
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1225,7 +1225,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3.1415925
+      scalar: 3.5325463
       minScalar: 0.7853982
       maxCurve:
         serializedVersion: 2
