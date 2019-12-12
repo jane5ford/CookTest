@@ -5,11 +5,12 @@ using UnityEngine;
 public class RashGameObject : MonoBehaviour
 {
     public GameObject RashingObject;
-    private float angleMin = 90f;
+    public GameObject RashingObjectCopy;
+    private float angleMin = 30f;
     private float angleMax = 180f;
     void Start()
     {
-        print(transform.eulerAngles.z);
+        
     }
 
     // Update is called once per frame
@@ -17,11 +18,10 @@ public class RashGameObject : MonoBehaviour
     {
         if (transform.eulerAngles.z >= angleMin && transform.eulerAngles.z < angleMax)
         {
-            //GameObject rashingObject = Instantiate(RashingObject);
-            //rashingObject.transform.position = gameObject.transform.position;
-            //print(transform.eulerAngles.z);
-            //RashingObject.transform.position = RashingObject.transform.position;
-            //RashingObject.
+            
+            //RashingObject.transform.position = new Vector3(transform.position.x + 1.5f, transform.position.y, transform.position.z);
+            RashingObject.SetActive(true);
+            RashingObjectCopy.SetActive(false);
         }
         else
         {

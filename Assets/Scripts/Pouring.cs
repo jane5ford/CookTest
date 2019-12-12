@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Pouring : MonoBehaviour
 {
-    public GameObject pos;
-    public GameObject anim;
-    public float Angle = 90f;
+    public ParticleSystem anim;
+    private float angleMin = 30f;
+    private float angleMax = 180f;
     /*private bool rotatable;
     private void OnTriggerEnter(Collider other)
     {
@@ -20,15 +20,19 @@ public class Pouring : MonoBehaviour
         }
     }*/
 
+    private void Start()
+    {
+        //anim.Stop();
+    }
+
     private void Update()
     {
-        if (gameObject.transform.rotation.eulerAngles.z >= Angle)
+        if (transform.eulerAngles.z >= angleMin && transform.eulerAngles.z < angleMax)
         {
-            anim.SetActive(true);
-            anim.transform.position = pos.transform.position;
+            anim.Play();
         } else
         {
-            anim.SetActive(false);
+            //anim.Stop();
         }
     }
 }
