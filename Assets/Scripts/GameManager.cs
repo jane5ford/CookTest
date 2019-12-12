@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     public void GamePlay()
     {
+        Debug.Log("Play pressed!");
         menu.SetActive(false);
         panel.SetActive(true);
         RecipeGeneration();
@@ -43,5 +44,11 @@ public class GameManager : MonoBehaviour
             minute++;
         }
         time.text = $"{minute:00} : {second:00}";
+    }
+
+    public void ExitPressed()
+    {
+        Debug.Log("Exit pressed!");
+        Application.Quit();
     }
 }
