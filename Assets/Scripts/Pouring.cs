@@ -4,35 +4,26 @@ using UnityEngine;
 
 public class Pouring : MonoBehaviour
 {
-    public ParticleSystem anim;
-    private float angleMin = 270f;
-    private float angleMax = 360f;
-    /*private bool rotatable;
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("ForPouring"))
-        {
-            Debug.Log("hhhhh");
-            rotatable = true;
-            Quaternion rotY = Quaternion.AngleAxis(1, Vector3.up);
-            transform.rotation *= rotY;
-            
-        }
-    }*/
+    public GameObject anim;
+    private float angleMin = 60f;
+    private float angleMax = 300f;
 
     private void Start()
     {
-        //anim.Stop();
+        anim.SetActive(false);
     }
 
     private void Update()
     {
-        if (transform.eulerAngles.x >= angleMin && transform.eulerAngles.x < angleMax)
+        
+        if (transform.rotation.eulerAngles.z >= angleMin && transform.rotation.eulerAngles.z < angleMax)
         {
-            anim.Play();
+            anim.SetActive(true);
+            //anim.Play();
         } else
         {
-            anim.Stop();
+            anim.SetActive(false);
+            //anim.Stop();
         }
     }
 }
