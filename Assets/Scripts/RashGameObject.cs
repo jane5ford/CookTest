@@ -18,8 +18,7 @@ public class RashGameObject : MonoBehaviour
     {
         if (transform.eulerAngles.z >= angleMin && transform.eulerAngles.z < angleMax)
         {
-            
-            //RashingObject.transform.position = new Vector3(transform.position.x + 1.5f, transform.position.y, transform.position.z);
+            RashingObject.transform.parent = gameObject.transform.parent;
             RashingObject.SetActive(true);
             RashingObjectCopy.SetActive(false);
         }
