@@ -44,11 +44,11 @@ public class Buttons : MonoBehaviour
     //-------------------------------------------------
     protected virtual void HandHoverUpdate(Valve.VR.InteractionSystem.Hand hand)
     {
-        if (hand.uiInteractAction != null && hand.uiInteractAction.GetStateDown(hand.handType))
+        /*if (hand.uiInteractAction != null && hand.uiInteractAction.GetStateDown(hand.handType))
         {
             Valve.VR.InteractionSystem.InputModule.instance.Submit(gameObject);
             Valve.VR.InteractionSystem.ControllerButtonHints.HideButtonHint(hand, hand.uiInteractAction);
-        }
+        }*/
     }
 
     protected virtual void OnButtonClick()
@@ -56,7 +56,7 @@ public class Buttons : MonoBehaviour
         onHandClick.Invoke(currentHand);
     }
 
-    public void PlayPressed()
+    /*public void PlayPressed()
     {
         Debug.Log("Play pressed!");
         manager.GamePlay();
@@ -66,6 +66,6 @@ public class Buttons : MonoBehaviour
     {
         Debug.Log("Exit pressed!");
         Application.Quit();
-    }
+    }*/
 }
 
