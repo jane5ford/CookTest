@@ -24,31 +24,27 @@ public class Cut : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "Cut" && count > 0)
+        if (collision.collider.tag == "Cut" && i < count)
         {
             if (activated)
             {
                 newPiece = Instantiate(piece);
                 newPiece.transform.parent = transform;
                 newPiece.transform.position = oldPos;
-                //half.transform.localScale = new Vector3(1f - (1f / count) * i, 1f, 1f);
-                if (count == 1) half.SetActive(false); //Destroy(half.GetComponent<MeshFilter>()); 
-            } else
+                half.transform.localScale = new Vector3(1f - (1f / count) * i, 1f, 1f);
+            }
+            else
             {
                 whole.SetActive(false);
                 half.SetActive(true);
                 piece.SetActive(true);
-                //GetComponent<BoxCollider>().enabled = false;
-                //MeshCollider mesh = gameObject.AddComponent<MeshCollider>();
-                //mesh.sharedMesh = half.GetComponent<Mesh>();
-                //mesh.convex = true;
                 activated = true;
             }
-            print(count);
-            print(i);
-            
-            count--;
             i++;
+        }
+        if (i == count)
+        {
+            for(int k = 2; k <= count; k++) Destroy(gameObject.transform.GetChild(k).GetComponent<Rigidbody>()); //gameObject.transform.GetChild(k).GetComponent<Rigidbody>().isKinematic = true;
         }
     }
 }
