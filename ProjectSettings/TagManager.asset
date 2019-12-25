@@ -11,6 +11,8 @@ TagManager:
   - Grate
   - Pan
   - Cooking
+  - BreakEgg
+  - Filling
   layers:
   - Default
   - TransparentFX
