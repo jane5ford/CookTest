@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PanLevel : MonoBehaviour
 {
+    public GameObject trigger;
     public bool Hot;
     // Start is called before the first frame update
     void Start()
@@ -14,7 +15,7 @@ public class PanLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Hot) gameObject.tag = "Cooking";
-        else gameObject.tag = "Pan";
+        //if (Hot) trigger.tag = "Cooking";
+        //else trigger.tag = "Pan";
     }
 }
