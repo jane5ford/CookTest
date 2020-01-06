@@ -26,7 +26,28 @@ public class Cut : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "Cut" && i < count && onBoard)
+        if (collision.collider.tag == "Cut" && i < count && onBoard && !activated)
+        {
+
+            gameObject.GetComponent<Rigidbody>().useGravity = false;
+            {
+                whole.SetActive(false);
+                half.SetActive(true);
+                piece.SetActive(true);
+                activated = true;
+            }
+           
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Board")
+        {
+            onBoard = true;
+            oldPos = piece.transform.position;
+            print(onBoard);
+        }
+        if (other.tag == "Cut" && i < count && onBoard)
         {
             if (activated)
             {
@@ -47,15 +68,6 @@ public class Cut : MonoBehaviour
         if (i == count)
         {
             //for(int k = 2; k <= count; k++) Destroy(gameObject.transform.GetChild(k).GetComponent<Rigidbody>()); //gameObject.transform.GetChild(k).GetComponent<Rigidbody>().isKinematic = true;
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Board")
-        {
-            onBoard = true;
-            oldPos = piece.transform.position;
-            print(onBoard);
         }
     }
     private void OnTriggerExit(Collider other)
