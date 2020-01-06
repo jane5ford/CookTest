@@ -21,10 +21,14 @@ public class RashGameObject : MonoBehaviour
             RashingObject.transform.parent = gameObject.transform.parent;
             RashingObject.SetActive(true);
             RashingObjectCopy.SetActive(false);
+            gameObject.GetComponent<RashGameObject>().enabled = false;
         }
         else
         {
             //RashingObject.SetActive(false);
         }
     }
+
+
+
 }

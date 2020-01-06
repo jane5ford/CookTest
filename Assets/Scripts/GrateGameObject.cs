@@ -7,18 +7,12 @@ public class GrateGameObject : MonoBehaviour
 {
     public GameObject LittlePiece;
     private GameObject littlePiece;
-    private GameObject gratedObject;
     private bool Gratable;
     private float pieceSize;
     void Start()
     {
-        pieceSize = transform.localScale.x / 100;
-        gratedObject = new GameObject();
-        gratedObject.transform.position = transform.position;
-        gratedObject.AddComponent<Throwable>();
-        gratedObject.AddComponent<BoxCollider>();
-        gratedObject.GetComponent<BoxCollider>().size = new Vector3(0.1f, 0.1f, 0.1f);
-        gratedObject.transform.parent = transform.parent;
+        //pieceSize = transform.localScale.x / 100;
+            
     }
 
     // Update is called once per frame
@@ -26,9 +20,10 @@ public class GrateGameObject : MonoBehaviour
     {
         if (Gratable && transform.localScale.x > 0)
         {
-            littlePiece = GameObject.Instantiate(LittlePiece, gameObject.transform.position, Quaternion.identity) as GameObject;
+            //littlePiece = GameObject.Instantiate(LittlePiece, gameObject.transform.position, Quaternion.identity) as GameObject;
             gameObject.transform.localScale = new Vector3(transform.localScale.x - pieceSize, transform.localScale.y, transform.localScale.z);
-            littlePiece.transform.parent = gratedObject.transform;
+            //littlePiece.transform.parent = gratedObject.transform;
+
         }
         if (transform.localScale.x <= 0) gameObject.SetActive(false);
        

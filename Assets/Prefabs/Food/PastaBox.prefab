@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 363320500759950228}
   - component: {fileID: 363320500759950231}
   m_Layer: 0
-  m_Name: pastaNoodle
+  m_Name: pastaNoodleInBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,6 @@ GameObject:
   - component: {fileID: 363320500641869795}
   - component: {fileID: 363320500641869793}
   - component: {fileID: 363320500641869806}
-  - component: {fileID: 4982159767628489959}
   m_Layer: 0
   m_Name: PastaBox
   m_TagString: Untagged
@@ -315,20 +314,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RashingObject: {fileID: 8073247476917281572}
   RashingObjectCopy: {fileID: 363320500759950249}
---- !u!114 &4982159767628489959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7602394374307091253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 028f87bc9f1c6074a831e5a951984c30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RashingObject: {fileID: 8073247476917281572}
-  RashingObjectCopy: {fileID: 363320500759950249}
 --- !u!1 &8073247476917281572
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +328,7 @@ GameObject:
   - component: {fileID: 615986776910456886}
   - component: {fileID: 6108062332404811332}
   m_Layer: 0
-  m_Name: pastaNoodleCopy
+  m_Name: pastaNoodle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

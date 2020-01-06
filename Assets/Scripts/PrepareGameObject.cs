@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PrepareGameObject : MonoBehaviour
 {
-    public GameObject NewForm;
+    public GameObject newForm;
     void Start()
     {
         
@@ -18,9 +18,12 @@ public class PrepareGameObject : MonoBehaviour
     {
         if (collider.tag == "Cooking")
         {
-            GameObject.Instantiate(NewForm, gameObject.transform.position, Quaternion.identity);
+            newForm.transform.position = gameObject.transform.position;
+            newForm.SetActive(true);
             gameObject.SetActive(false);
+            //GameObject.Instantiate(NewForm, gameObject.transform.position, Quaternion.identity);
+
         }
-        
+
     }
 }
