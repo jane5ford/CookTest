@@ -27,12 +27,8 @@ public class sausePan : MonoBehaviour
             
             if (food.name == "pastaNoodle")
             {
-                if (isFirst)
-                {
-                    defaultScale = food.transform.localScale.x;
-
-                }
                 if (isFirst) NewForm = noodle;
+                
                 float decrease = (defaultScale / 100) * Time.deltaTime;
                 food.transform.localScale -= new Vector3(decrease, decrease, decrease);
                 if (food.transform.localScale.x < defaultScale * 0.8)
@@ -41,8 +37,18 @@ public class sausePan : MonoBehaviour
                 }
             }
             else
-            {       
-                    
+            {
+                print(food.name);
+                if (isFirst) NewForm = wrongFood;
+                food.SetActive(false);
+                /*
+                float decrease = (defaultScale / 10) * Time.deltaTime;
+                food.transform.localScale -= new Vector3(decrease, decrease, decrease);
+                if (food.transform.localScale.x < defaultScale * 0.1)
+                {
+                    Destroy(food);
+                }
+                */
             }
 
             if (NewForm != null && isFirst)
@@ -54,11 +60,12 @@ public class sausePan : MonoBehaviour
                 newForm.transform.localScale = new Vector3(defaultScale2 / 10, defaultScale2 / 10, defaultScale2 / 10);
                 isFirst = false;
             }
-            if (newForm.transform.localScale.z < defaultScale2)
+            if (newForm != null && newForm.transform.localScale.z < defaultScale2)
             {
                 float increase = (defaultScale2 / 20) * Time.deltaTime;
                 newForm.transform.localScale += new Vector3(increase, increase / 2, increase);
             }
+            
         }
 
         
@@ -68,10 +75,6 @@ public class sausePan : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        //name = other.name;
-        food = other.gameObject;
-        
-        //print(defaultScale);
-        
+        food = other.gameObject;        
     }
 }
