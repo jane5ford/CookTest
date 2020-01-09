@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4804958416905223942
+--- !u!1001 &3545830490999912185
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -15,32 +15,32 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 920a5bbf76e5a8a4aa7c17b92aed2577,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.264
+      value: -0.02588499
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 920a5bbf76e5a8a4aa7c17b92aed2577,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.831
+      value: 0.0023
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 920a5bbf76e5a8a4aa7c17b92aed2577,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.061
+      value: -0.06891817
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 920a5bbf76e5a8a4aa7c17b92aed2577,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 920a5bbf76e5a8a4aa7c17b92aed2577,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 920a5bbf76e5a8a4aa7c17b92aed2577,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 920a5bbf76e5a8a4aa7c17b92aed2577,
         type: 3}
@@ -66,6 +66,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 920a5bbf76e5a8a4aa7c17b92aed2577,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2339888
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 920a5bbf76e5a8a4aa7c17b92aed2577,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6773418
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 920a5bbf76e5a8a4aa7c17b92aed2577,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1907328
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 920a5bbf76e5a8a4aa7c17b92aed2577, type: 3}
