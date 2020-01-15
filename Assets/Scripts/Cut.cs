@@ -9,7 +9,7 @@ public class Cut : MonoBehaviour
     public GameObject half;
     public GameObject piece;
     public int count = 7;
-    public int i = 0;
+    private int i = 0;
     private GameObject newPiece;
     private bool activated;
     private bool onBoard = false;
@@ -30,12 +30,8 @@ public class Cut : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        print("colEnter");
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        print("trigEnter");
+        Collider other = collision.collider;
+        print("colEnter: " + other.tag);
         if (other.tag == "Board")
         {
             onBoard = true;
@@ -49,7 +45,7 @@ public class Cut : MonoBehaviour
                 print("2");
                 newPiece = Instantiate(piece);
                 newPiece.transform.parent = transform.parent;
-                newPiece.transform.position = oldPos;
+                newPiece.transform.position = half.transform.position;
                 half.transform.localScale = new Vector3(1f - (1f / count) * i, 1f, 1f);
                 print("3");
 
@@ -61,21 +57,30 @@ public class Cut : MonoBehaviour
                 half.SetActive(true);
                 piece.SetActive(true);
                 piece.transform.parent = transform.parent;
-                
+
                 activated = true;
             }
             i++;
         }
-        if (i == count)
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print(onBoard);
+        print("trigEnter");
+        if (other.tag == "Board")
         {
-            //for(int k = 2; k <= count; k++) Destroy(gameObject.transform.GetChild(k).GetComponent<Rigidbody>()); //gameObject.transform.GetChild(k).GetComponent<Rigidbody>().isKinematic = true;
+            onBoard = true;
+            //print(onBoard);
         }
+        
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Board")
         {
-            //onBoard = false;
+            onBoard = false;
             print(onBoard);
         }
     }

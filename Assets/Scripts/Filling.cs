@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Filling : MonoBehaviour
 {
-    public GameObject content;
+    public GameObject cream;
     private Pouring pouring;
     void Start()
     {
-        
+        cream.transform.localScale = Vector3.zero;
+        cream.SetActive(false);
     }
 
     // Update is called once per frame
@@ -16,16 +17,17 @@ public class Filling : MonoBehaviour
     {
         if (pouring)
         {
-            if (pouring.tilted && content.transform.localScale.x >= 0f && content.transform.localScale.x < 0.9f)
+            if (pouring.tilted && cream.transform.localScale.x >= 0f && cream.transform.localScale.x < 0.9f)
             {
                 float increase = 0.1f * Time.deltaTime;
-                content.transform.localScale += new Vector3(increase, increase, increase);
+                cream.transform.localScale += new Vector3(increase, increase, increase);
             }
-            if (content.transform.localScale.x > 0.9f)
+            if (cream.transform.localScale.x > 0.9f)
             {
                 pouring.enabled = false;
             }
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,7 +36,7 @@ public class Filling : MonoBehaviour
         {
             pouring = other.GetComponent<Pouring>();
             pouring.enabled = true;
-            
+            cream.SetActive(true);
         }
     }
  
