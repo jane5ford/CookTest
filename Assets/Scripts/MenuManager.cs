@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public GameObject menu;
+
+    private void Start()
+    {
+        menu.SetActive(true);
+    }
 
     public void PlayPressed()
     {
