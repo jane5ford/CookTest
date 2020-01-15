@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 3519006902795438522}
   m_Layer: 0
   m_Name: HamPieces
-  m_TagString: Untagged
+  m_TagString: ForPan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

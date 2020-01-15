@@ -13082,6 +13082,26 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5244639326368637808, guid: 0cdfe29755d6cbb4ea546f0f48df814c,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.09174123
+      objectReference: {fileID: 0}
+    - target: {fileID: 5244639326368637808, guid: 0cdfe29755d6cbb4ea546f0f48df814c,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 4.615209e-13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5244639326368637808, guid: 0cdfe29755d6cbb4ea546f0f48df814c,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.11127892
+      objectReference: {fileID: 0}
+    - target: {fileID: 5244639326368637808, guid: 0cdfe29755d6cbb4ea546f0f48df814c,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.06626736
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cdfe29755d6cbb4ea546f0f48df814c, type: 3}
 --- !u!1001 &1491160460130402919
@@ -13363,6 +13383,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6372692123803372319, guid: e887f8dd27e01224d947bd53775abe5e,
+        type: 3}
+      propertyPath: m_TagString
+      value: ForPan
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e887f8dd27e01224d947bd53775abe5e, type: 3}
 --- !u!1001 &3139744828364389199
@@ -13431,6 +13456,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519006902795438523, guid: ad37485f40096854aa71c99228050831,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519006902795438523, guid: ad37485f40096854aa71c99228050831,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad37485f40096854aa71c99228050831, type: 3}
@@ -13579,6 +13614,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516397459314382492, guid: dee5fd8483d14ad4196822a9ee271b30,
+        type: 3}
+      propertyPath: m_TagString
+      value: ForPan
       objectReference: {fileID: 0}
     - target: {fileID: 3516397460088943389, guid: dee5fd8483d14ad4196822a9ee271b30,
         type: 3}

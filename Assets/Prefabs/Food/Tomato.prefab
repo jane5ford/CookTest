@@ -268,7 +268,6 @@ MonoBehaviour:
   half: {fileID: 3516397460088943389}
   piece: {fileID: 3516397459314382492}
   count: 7
-  i: 1
 --- !u!1 &3516397459314382492
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +285,7 @@ GameObject:
   - component: {fileID: 3516397459314382490}
   m_Layer: 0
   m_Name: TomatoPiece
-  m_TagString: Untagged
+  m_TagString: ForPan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
