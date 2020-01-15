@@ -38,7 +38,6 @@ public class sausePan : MonoBehaviour
             }
             else
             {
-                print(food.name);
                 if (isFirst) NewForm = wrongFood;
                 food.SetActive(false);
                 /*
@@ -76,6 +75,7 @@ public class sausePan : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        food = other.gameObject;        
+        food = other.gameObject;
+        print("yes");
     }
 }
