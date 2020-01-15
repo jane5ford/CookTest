@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public Text time;
     private List<string> recipes = new List<string>();
     private List<string> isRecipeDone = new List<string>();
+    public GameObject room;
 
     float second;
     float minute;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
         panel.SetActive(false);
         recipes.Add("Карбонара: \r\n Ветчина \r\n Чеснок \r\n Сыр Пармезан \r\n Яйца \r\n Сливки \r\n Спагетти \r\n Специи");
         recipes.Add("Болоньезе: \r\n Фарш \r\n Чеснок \r\n Лук \r\n Помидоры \r\n Морковь \r\n Спагетти \r\n Специи \r\n Сыр Пармезан");
+        room.SetActive(false);
     }
 
     public void GamePlay()
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
         second = 0;
         minute = 0;
         InvokeRepeating("RunTimer", 1, 1);
+        room.SetActive(true);
     }
 
     public void RecipeGeneration()
