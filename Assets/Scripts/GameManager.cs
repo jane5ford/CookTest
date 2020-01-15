@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,8 +12,6 @@ public class GameManager : MonoBehaviour
     public GameObject panel;
     public Text recipe;
     public Text time;
-    private List<string> recipes = new List<string>();
-    private List<string> isRecipeDone = new List<string>();
     public GameObject room;
 
     public Text resultPers;
@@ -23,17 +22,18 @@ public class GameManager : MonoBehaviour
     float pauseSecond;
     float pauseMinute;
 
+    int numRecipe;
+    string file;
+
     private string currentRecipe;
 
     private void Start()
     {
-        panel.SetActive(true);
-        recipes.Add("Карбонара: \r\n Ветчина \r\n Чеснок \r\n Сыр Пармезан \r\n Яйца \r\n Сливки \r\n Спагетти \r\n Специи");
-        recipes.Add("Болоньезе: \r\n Фарш \r\n Чеснок \r\n Лук \r\n Помидоры \r\n Морковь \r\n Спагетти \r\n Специи \r\n Сыр Пармезан");
         room.SetActive(true);
         menu.SetActive(false);
         pauseMenu.SetActive(false);
         gameOver_Menu.SetActive(false);
+        panel.SetActive(true);
         RecipeGeneration();
         Timer();
     }
@@ -58,9 +58,11 @@ public class GameManager : MonoBehaviour
 
     public void RecipeGeneration()
     {
-        currentRecipe = recipes[Random.Range(0, recipes.Count)];
-        recipe.text = currentRecipe;
-        isRecipeDone.Add(currentRecipe);
+        numRecipe = Random.Range(1, 3);
+        file = Application.dataPath + "/" + numRecipe.ToString() + ".txt";
+        string textRec = File.ReadAllText(file);
+        recipe.text = textRec;
+        //isRecipeDone.Add(currentRecipe);
         //сделать проверку
     }
 
@@ -77,7 +79,7 @@ public class GameManager : MonoBehaviour
 
     void RunTimer()
     {
-        if (gameOver_Menu.activeSelf == false)
+        if (!pauseMenu.activeInHierarchy)
         {
             second++;
             if (second == 60)
@@ -93,7 +95,8 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Game over");
-        menu.SetActive(false);
+        menu.SetActive(true);
+        pauseMenu.SetActive(false);
         gameOver_Menu.SetActive(true);
         pauseSecond = second;
         pauseMinute = minute;
@@ -105,6 +108,6 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("End game pressed!");
         
-        SceneManager.LoadScene("Alina");
+        SceneManager.LoadScene("Menu");
     }
 }
