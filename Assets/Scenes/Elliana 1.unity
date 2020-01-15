@@ -11288,6 +11288,7 @@ MonoBehaviour:
   panel: {fileID: 1957580074}
   recipe: {fileID: 54252005}
   time: {fileID: 2036052838}
+  room: {fileID: 0}
 --- !u!4 &975343769
 Transform:
   m_ObjectHideFlags: 0
@@ -19438,7 +19439,7 @@ PrefabInstance:
     - target: {fileID: 3516397459155088526, guid: dee5fd8483d14ad4196822a9ee271b30,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1045
+      value: 0.0339
       objectReference: {fileID: 0}
     - target: {fileID: 3516397459155088526, guid: dee5fd8483d14ad4196822a9ee271b30,
         type: 3}
@@ -19508,12 +19509,12 @@ PrefabInstance:
     - target: {fileID: 3516397459155088520, guid: dee5fd8483d14ad4196822a9ee271b30,
         type: 3}
       propertyPath: m_IsKinematic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3516397459155088520, guid: dee5fd8483d14ad4196822a9ee271b30,
         type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3516397459314382492, guid: dee5fd8483d14ad4196822a9ee271b30,
         type: 3}
