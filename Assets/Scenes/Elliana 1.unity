@@ -13302,6 +13302,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Garlic
       objectReference: {fileID: 0}
+    - target: {fileID: 3121474678970486432, guid: e887f8dd27e01224d947bd53775abe5e,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000,
+        type: 0}
     - target: {fileID: 3121474678970486435, guid: e887f8dd27e01224d947bd53775abe5e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13478,6 +13484,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3516397459155088527, guid: dee5fd8483d14ad4196822a9ee271b30,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000,
+        type: 0}
     - target: {fileID: 3516397459155088526, guid: dee5fd8483d14ad4196822a9ee271b30,
         type: 3}
       propertyPath: m_LocalPosition.x
