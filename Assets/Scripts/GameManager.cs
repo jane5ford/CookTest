@@ -35,9 +35,7 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
         gameOver_Menu.SetActive(false);
         RecipeGeneration();
-        second = 0;
-        minute = 0;
-        InvokeRepeating("RunTimer", 1, 1);
+        Timer();
     }
 
     public void PlayGame()
@@ -49,6 +47,13 @@ public class GameManager : MonoBehaviour
         room.SetActive(true);
         second = pauseSecond;
         minute = pauseMinute;
+    }
+
+    public void Timer()
+    {
+        second = 0;
+        minute = 0;
+        InvokeRepeating("RunTimer", 1, 1);
     }
 
     public void RecipeGeneration()
@@ -72,7 +77,7 @@ public class GameManager : MonoBehaviour
 
     void RunTimer()
     {
-        if (!gameOver_Menu)
+        if (gameOver_Menu.activeSelf == false)
         {
             second++;
             if (second == 60)
