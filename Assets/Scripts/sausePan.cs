@@ -53,6 +53,7 @@ public class sausePan : MonoBehaviour
 
             if (NewForm != null && isFirst)
             {
+                print("works");
                 newForm = GameObject.Instantiate(NewForm, gameObject.transform.position, Quaternion.identity);
                 newForm.transform.parent = gameObject.transform.parent;
                 NewForm = null;

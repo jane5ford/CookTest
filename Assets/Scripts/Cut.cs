@@ -16,7 +16,11 @@ public class Cut : MonoBehaviour
     private Vector3 oldPos;
     void Start()
     {
-        
+        half.SetActive(false);
+        piece.SetActive(false);
+        //newPiece = Instantiate(piece);
+        //newPiece.transform.parent = transform.parent;
+        oldPos = piece.transform.position;
     }
 
     void Update()
@@ -26,41 +30,38 @@ public class Cut : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "Cut" && i < count && onBoard && !activated)
-        {
-
-            gameObject.GetComponent<Rigidbody>().useGravity = false;
-            {
-                whole.SetActive(false);
-                half.SetActive(true);
-                piece.SetActive(true);
-                activated = true;
-            }
-           
-        }
+        print("colEnter");
     }
+
     private void OnTriggerEnter(Collider other)
     {
+        print("trigEnter");
         if (other.tag == "Board")
         {
             onBoard = true;
-            oldPos = piece.transform.position;
-            print(onBoard);
+            //print(onBoard);
         }
         if (other.tag == "Cut" && i < count && onBoard)
         {
+            print("knife");
             if (activated)
             {
+                print("2");
                 newPiece = Instantiate(piece);
-                newPiece.transform.parent = transform;
+                newPiece.transform.parent = transform.parent;
                 newPiece.transform.position = oldPos;
                 half.transform.localScale = new Vector3(1f - (1f / count) * i, 1f, 1f);
+                print("3");
+
             }
             else
             {
+                print("1");
                 whole.SetActive(false);
                 half.SetActive(true);
                 piece.SetActive(true);
+                piece.transform.parent = transform.parent;
+                
                 activated = true;
             }
             i++;
@@ -74,7 +75,7 @@ public class Cut : MonoBehaviour
     {
         if (other.tag == "Board")
         {
-            onBoard = false;
+            //onBoard = false;
             print(onBoard);
         }
     }

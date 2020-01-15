@@ -191,15 +191,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4798739458921416993}
     m_Modifications:
-    - target: {fileID: 3396485922524063704, guid: a0568a5e90e9bfa4da8786c6a6ad48cf,
-        type: 3}
-      propertyPath: m_Name
-      value: Tomato Variant
-      objectReference: {fileID: 0}
     - target: {fileID: 1835749198331352523, guid: a0568a5e90e9bfa4da8786c6a6ad48cf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0425539
+      value: 0.1133
       objectReference: {fileID: 0}
     - target: {fileID: 1835749198331352523, guid: a0568a5e90e9bfa4da8786c6a6ad48cf,
         type: 3}
@@ -251,6 +246,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3396485922524063704, guid: a0568a5e90e9bfa4da8786c6a6ad48cf,
+        type: 3}
+      propertyPath: m_Name
+      value: Tomato Variant
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0568a5e90e9bfa4da8786c6a6ad48cf, type: 3}
 --- !u!4 &3290508048030069555 stripped
@@ -266,15 +266,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4798739458921416993}
     m_Modifications:
-    - target: {fileID: 7354430614739651407, guid: 41814a2ca0f63044d84579b9d29344eb,
-        type: 3}
-      propertyPath: m_Name
-      value: TomatoPieces 1 Variant
-      objectReference: {fileID: 0}
     - target: {fileID: 5785848392567912796, guid: 41814a2ca0f63044d84579b9d29344eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.04
+      value: -0.1777
       objectReference: {fileID: 0}
     - target: {fileID: 5785848392567912796, guid: 41814a2ca0f63044d84579b9d29344eb,
         type: 3}
@@ -325,6 +320,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354430614739651407, guid: 41814a2ca0f63044d84579b9d29344eb,
+        type: 3}
+      propertyPath: m_Name
+      value: TomatoPieces 1 Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41814a2ca0f63044d84579b9d29344eb, type: 3}
