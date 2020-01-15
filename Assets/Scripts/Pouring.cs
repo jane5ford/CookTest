@@ -19,7 +19,6 @@ public class Pouring : MonoBehaviour
         
         if (transform.rotation.eulerAngles.z >= angleMin && transform.rotation.eulerAngles.z < angleMax)
         {
-            print("works");
             anim.SetActive(true);
             tilted = true;
             //anim.Play();

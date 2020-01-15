@@ -17,7 +17,6 @@ public class BowlBottom : MonoBehaviour
     {
         if (eggs && eggs.transform.localScale.x >= 0f && eggs.transform.localScale.x < 0.9f)
         {
-            print("eggIncrease");
             float increase = 0.11f * Time.deltaTime;
             eggs.transform.localScale += new Vector3(increase, increase, increase);
         }

@@ -31,7 +31,6 @@ public class Cut : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Collider other = collision.collider;
-        print("colEnter: " + other.tag);
         if (other.tag == "Board")
         {
             onBoard = true;
@@ -39,7 +38,6 @@ public class Cut : MonoBehaviour
         }
         if (other.tag == "Cut" && i < count && onBoard)
         {
-            print("knife");
             if (activated)
             {
                 print("2");
@@ -68,7 +66,6 @@ public class Cut : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         print(onBoard);
-        print("trigEnter");
         if (other.tag == "Board")
         {
             onBoard = true;

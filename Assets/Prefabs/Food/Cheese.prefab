@@ -237,6 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whole: {fileID: 808573253536708866}
   grated: {fileID: 717793435592983718}
+  Piece: {fileID: 8224800348267940104, guid: ac14b2c98aadffc458cc93ce5fb2a441, type: 3}
 --- !u!64 &5553208933956605332
 MeshCollider:
   m_ObjectHideFlags: 0
