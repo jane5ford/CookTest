@@ -18,12 +18,21 @@ public class loadingbar : MonoBehaviour {
     private RectTransform rectComponent;
     private Image imageComp;
 
+    float second;
+    float minute;
+    float pauseSecond;
+    float pauseMinute;
+
     // Use this for initialization
     void Start () {
         rectComponent = GetComponent<RectTransform>();
         imageComp = rectComponent.GetComponent<Image>();
         imageComp.fillAmount = 0.0f;
         cl = panTrigger.GetComponent<CookedLevel>();
+
+        second = 00;
+        minute = 2;
+        InvokeRepeating("RunTimer2", -1, 1);
     }
 
     void Update()
@@ -44,6 +53,23 @@ public class loadingbar : MonoBehaviour {
                 imageComp.fillAmount = 0.0f;
             }
         }
+        
+    }
+
+    void RunTimer2()
+    {
+        on = true;
+        if (on == true)
+        {
+            second--;
+            if (second == 00)
+            {
+                second = 59;
+                minute--;
+            }
+        }
+
+        timerText.text = $"{minute:00} : {second:00}";
         
     }
 }

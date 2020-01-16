@@ -90,6 +90,10 @@ public class GameManager : MonoBehaviour
         }
 
         time.text = $"{minute:00} : {second:00}";
+        if (minute == 5f)
+        {
+            GameOver();
+        }
     }
 
     public void GameOver()
