@@ -33,6 +33,8 @@ public class sausePan : MonoBehaviour
                 if (food.transform.localScale.x < defaultScale * 0.8)
                 {
                     Destroy(food);
+                    transform.parent.GetComponent<MeshCollider>().convex = true;
+                    transform.parent.GetComponent<Rigidbody>().isKinematic = false;
                 }
             }
             else
@@ -75,6 +77,5 @@ public class sausePan : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         food = other.gameObject;
-        print("yes");
     }
 }
