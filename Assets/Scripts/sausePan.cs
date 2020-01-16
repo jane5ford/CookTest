@@ -8,13 +8,14 @@ public class sausePan : MonoBehaviour
     public GameObject wrongFood;
     private GameObject NewForm;
     private GameObject newForm;
+    private CookedLevel cl;
     float defaultScale;
     float defaultScale2;
     bool isFirst = true;
     GameObject food;
     void Start()
     {
-        CookedLevel cl = GetComponent<CookedLevel>();
+        cl = GetComponent<CookedLevel>();
     }
 
     // Update is called once per frame
@@ -27,7 +28,9 @@ public class sausePan : MonoBehaviour
             if (food.name == "pastaNoodle")
             {
                 if (isFirst) NewForm = noodle;
-                
+
+                cl.setSize((int)defaultScale);
+                cl.setLevel((int)defaultScale /100);
                 float decrease = (defaultScale / 100) * Time.deltaTime;
                 food.transform.localScale -= new Vector3(decrease, decrease, decrease);
                 if (food.transform.localScale.x < defaultScale * 0.8)
