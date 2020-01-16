@@ -13,6 +13,7 @@ public class sausePan : MonoBehaviour
     float defaultScale2;
     bool isFirst = true;
     GameObject food;
+    private int time = 1;
     void Start()
     {
         cl = GetComponent<CookedLevel>();
@@ -28,9 +29,6 @@ public class sausePan : MonoBehaviour
             if (food.name == "pastaNoodle")
             {
                 if (isFirst) NewForm = noodle;
-
-                cl.setSize((int)defaultScale);
-                cl.setLevel((int)defaultScale /100);
                 float decrease = (defaultScale / 100) * Time.deltaTime;
                 food.transform.localScale -= new Vector3(decrease, decrease, decrease);
                 if (food.transform.localScale.x < defaultScale * 0.8)
@@ -38,7 +36,8 @@ public class sausePan : MonoBehaviour
                     Destroy(food);
                     transform.parent.GetComponent<MeshCollider>().convex = true;
                     transform.parent.GetComponent<Rigidbody>().isKinematic = false;
-                }
+                }               
+                
             }
             else
             {
@@ -68,14 +67,10 @@ public class sausePan : MonoBehaviour
             {
                 float increase = (defaultScale2 / 20) * Time.deltaTime;
                 newForm.transform.localScale += new Vector3(increase, increase / 2, increase);
+                cl.setSize((int)defaultScale2);
+                cl.setLevel((int)newForm.transform.localScale.x);
             }
-            
         }
-
-        
-
-        
-        
     }
     private void OnTriggerEnter(Collider other)
     {

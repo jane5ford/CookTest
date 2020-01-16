@@ -145,6 +145,12 @@ public class PanCooking : MonoBehaviour
                 cl.setLevel(count);
                 result += (100 / recCount);
             }
+
+            if (count == 1)
+            {
+                cl.turnOn(true);
+            }
+
             result *= quality;
             print("Quality: "+result);
         }

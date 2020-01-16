@@ -51,12 +51,18 @@ public class loadingbar : MonoBehaviour {
                 imageComp.fillAmount = 0.0f;
             }
         }
-        if (timerText.text == "00 : 00") on = false;
+        if (timerText.text == "00 : 00") 
+        { 
+            cl.turnOn(false);
+            transform.parent.gameObject.SetActive(false);
+            panTrigger.transform.parent.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            panTrigger.transform.parent.gameObject.GetComponent<MeshCollider>().convex = true;
+        }
     }
 
     void RunTimer()
     {
-        if (on)
+        if (cl.isTurn())
         {
             second--;
             if (second == -1)

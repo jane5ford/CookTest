@@ -6,6 +6,7 @@ public class CookedLevel : MonoBehaviour
 {
     private int level;
     private int size;
+    private bool on = false;
     void Start()
     {
         
@@ -20,4 +21,6 @@ public class CookedLevel : MonoBehaviour
     public void setSize(int size) { this.size = size; }
     public int getLevel() { return this.level; }
     public int getSize() { return this.size; }
+    public void turnOn(bool on) { this.on = on; }
+    public bool isTurn() { return this.on; }
 }
