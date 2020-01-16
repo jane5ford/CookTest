@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5244639326368637809}
   - component: {fileID: 5244639326368637808}
   - component: {fileID: 5244639326368637711}
+  - component: {fileID: 8317261129634693108}
   m_Layer: 0
   m_Name: PanTrigger
   m_TagString: Pan
@@ -57,16 +58,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688aa0c5ea3e94d4ca4df292e1c9ac63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reciep: 0
+  recipe: 0
   Hot: 1
   foodInPan: {fileID: 1020883250415826084}
   Meat: {fileID: 2100000, guid: c91a2274dc8fb454a968b628b1a3cf28, type: 2}
   Tomatoes: {fileID: 2100000, guid: e70682d9106ac4c46a5d75ad501c24c8, type: 2}
+  Carrots: {fileID: 0}
   MeatAndTomatoes: {fileID: 2100000, guid: e04a5e22a38293740b4017c3f1c53279, type: 2}
   Noodles: {fileID: -6403679388501866254, guid: 9390b7e8c158d6d459dba6213d5262a8,
     type: 3}
   DefFood: {fileID: 2100000, guid: 90002b26644dd7a4ba538b25c6aea6f0, type: 2}
   chain: []
+--- !u!114 &8317261129634693108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5244639326368637810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbdf8370950717a42b02be9cf96f2616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7487863352918523514
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PanCooking : MonoBehaviour
 {
-    public int reciep; // 0 - Carbonara, 1 - Bolognese
+    public int recipe; // 0 - Carbonara, 1 - Bolognese
     public bool Hot = true;
     [SerializeField]
     GameObject foodInPan;
@@ -39,7 +39,7 @@ public class PanCooking : MonoBehaviour
     private GameObject obj;
     private GameObject newFood;
     private GameObject curFood;
-
+    private CookedLevel cl;
     public string[] chain;
     private int count = 0;
     private int recCount;
@@ -47,9 +47,14 @@ public class PanCooking : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+        recipe = 1;
+        if (recipe == 0) recCount = 4;
+        if (recipe == 1) recCount = 5;
+        cl = GetComponent<CookedLevel>();
+        cl.setSize(recCount);
         pan = transform.parent.gameObject;
-        reciep = 1;
-        recCount = 5;
+        
     }
 
     // Update is called once per frame
@@ -58,16 +63,15 @@ public class PanCooking : MonoBehaviour
         
     }
 
-    public void SetReciep(int i) { this.reciep = i; }
+    public void SetReciep(int i) { this.recipe = i; }
 
     private void OnTriggerEnter(Collider other)
     {
-        print(other.name);
         newFood = other.gameObject;
         switch (other.name)
         {
             case "OnionPiece":
-                if (reciep == 0)
+                if (recipe == 0)
                     quality = wrong;
                 else {
                     if (count == 0) quality = perfect;
@@ -75,7 +79,7 @@ public class PanCooking : MonoBehaviour
                 }
                 break;
             case "GarlicPiece":
-                if (reciep == 0)
+                if (recipe == 0)
                     quality = wrong;
                 else
                 {
@@ -86,7 +90,7 @@ public class PanCooking : MonoBehaviour
             case "Meat":
                 if (curMat == Tomatoes) NewMat = MeatAndTomatoes; 
                 else NewMat = Meat;
-                if (reciep == 0)
+                if (recipe == 0)
                     quality = wrong;
                 else
                 {
@@ -97,7 +101,7 @@ public class PanCooking : MonoBehaviour
             case "TomatoPiece":
                 if (curMat == Meat) NewMat = MeatAndTomatoes; 
                 else if (curMat != MeatAndTomatoes) NewMat = Tomatoes;
-                if (reciep == 0)
+                if (recipe == 0)
                     quality = wrong;
                 else
                 {
@@ -106,7 +110,7 @@ public class PanCooking : MonoBehaviour
                 }
                 break;
             case "CarrotPiece":
-                if (reciep == 0)
+                if (recipe == 0)
                     quality = wrong;
                 else
                 {
@@ -117,12 +121,12 @@ public class PanCooking : MonoBehaviour
 
             case "NoodleInPan":
                 NewMat = Noodles;
-                if (reciep == 0)
+                if (recipe == 0)
                     quality = perfect;
                 else quality = wrong;
                 break;
             case "HamPieces":
-                if (reciep == 0)
+                if (recipe == 0)
                     quality = perfect;
                 else quality = wrong;
                 break;
@@ -138,10 +142,11 @@ public class PanCooking : MonoBehaviour
             if (quality != wrong)
             {
                 count++;
+                cl.setLevel(count);
                 result += (100 / recCount);
             }
             result *= quality;
-            //print(result);
+            print("Quality: "+result);
         }
         //print("still " + count);
         if (quality == wrong) NewMat = DefFood;

@@ -14,7 +14,7 @@ public class sausePan : MonoBehaviour
     GameObject food;
     void Start()
     {
-        
+        CookedLevel cl = GetComponent<CookedLevel>();
     }
 
     // Update is called once per frame

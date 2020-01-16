@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3116656742161058298}
   - component: {fileID: 3116656742161058299}
   - component: {fileID: 7785129306858786527}
+  - component: {fileID: 8839961350434068342}
   m_Layer: 0
   m_Name: PanTrigger
   m_TagString: Pan
@@ -60,6 +61,18 @@ MonoBehaviour:
   noodle: {fileID: 1989568950496009549, guid: 9eadbc3f253e4e241a584dd257dc0a95, type: 3}
   wrongFood: {fileID: 1989568950496009549, guid: cea9f4e2d5c46884bb4def9d2c18b453,
     type: 3}
+--- !u!114 &8839961350434068342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3116656742161058297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbdf8370950717a42b02be9cf96f2616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7784922854181467118
 GameObject:
   m_ObjectHideFlags: 0
