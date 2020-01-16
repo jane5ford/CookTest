@@ -8,7 +8,6 @@ public class sausePan : MonoBehaviour
     public GameObject wrongFood;
     private GameObject NewForm;
     private GameObject newForm;
-    //string name;
     float defaultScale;
     float defaultScale2;
     bool isFirst = true;

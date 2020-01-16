@@ -14,36 +14,42 @@ public class PanCooking : MonoBehaviour
     [SerializeField]
     Material Tomatoes;
     [SerializeField]
+    Material Carrots;
+    [SerializeField]
     Material MeatAndTomatoes;
     [SerializeField]
     Material Noodles;
     [SerializeField]
     Material DefFood;
 
+    Material curMat;
+
     const float perfect = 1f;
-    const float good = 0.8f;
+    const float good = 0.9f;
     const float wrong = 0.5f;
 
     Material NewMat;
     GameObject Carbonara;
-    GameObject newForm;
-    GameObject oldForm;
+    
     GameObject pan;
     bool correct;
     float quality = 1f;
     float totalQuality = 1f;
 
     private GameObject obj;
+    private GameObject newFood;
+    private GameObject curFood;
 
     public string[] chain;
-    private int i = 0;
+    private int count = 0;
+    private int recCount;
+    private float result;
     // Start is called before the first frame update
     void Start()
     {
         pan = transform.parent.gameObject;
-        if (reciep == 0) chain = new string[5];
-        if (reciep == 1) chain = new string[5];
         reciep = 1;
+        recCount = 5;
     }
 
     // Update is called once per frame
@@ -52,31 +58,63 @@ public class PanCooking : MonoBehaviour
         
     }
 
+    public void SetReciep(int i) { this.reciep = i; }
+
     private void OnTriggerEnter(Collider other)
     {
         print(other.name);
-        other.transform.parent = transform.parent;
-        oldForm = other.gameObject;
+        newFood = other.gameObject;
         switch (other.name)
         {
-            case "Meat":
-                NewMat = Meat;
+            case "OnionPiece":
                 if (reciep == 0)
                     quality = wrong;
-                else quality = perfect;
-                break;
-            case "TomatoPiece":
-                
-                NewMat = Tomatoes;
-                if (reciep == 0)
-                    quality = wrong;
-                else quality = perfect;
+                else {
+                    if (count == 0) quality = perfect;
+                    else quality = good;
+                }
                 break;
             case "GarlicPiece":
                 if (reciep == 0)
                     quality = wrong;
-                else quality = perfect;
+                else
+                {
+                    if (count == 1) quality = perfect;
+                    else quality = good;
+                }
                 break;
+            case "Meat":
+                if (curMat == Tomatoes) NewMat = MeatAndTomatoes; 
+                else NewMat = Meat;
+                if (reciep == 0)
+                    quality = wrong;
+                else
+                {
+                    if (count == 2) quality = perfect;
+                    else quality = good;
+                }
+                break;
+            case "TomatoPiece":
+                if (curMat == Meat) NewMat = MeatAndTomatoes; 
+                else if (curMat != MeatAndTomatoes) NewMat = Tomatoes;
+                if (reciep == 0)
+                    quality = wrong;
+                else
+                {
+                    if (count == 3) quality = perfect;
+                    else quality = good;
+                }
+                break;
+            case "CarrotPiece":
+                if (reciep == 0)
+                    quality = wrong;
+                else
+                {
+                    if (count == 4) quality = perfect;
+                    else quality = good;
+                }
+                break;
+
             case "NoodleInPan":
                 NewMat = Noodles;
                 if (reciep == 0)
@@ -92,27 +130,29 @@ public class PanCooking : MonoBehaviour
                 quality = wrong;
                 break;
         }
+        //print(newFood.transform.parent.name);
+        if (newFood != curFood && newFood.transform.parent != transform.parent)
+        {
+            curFood = newFood;
+            curFood.transform.parent = pan.transform;
+            if (quality != wrong)
+            {
+                count++;
+                result += (100 / recCount);
+            }
+            result *= quality;
+            //print(result);
+        }
+        //print("still " + count);
         if (quality == wrong) NewMat = DefFood;
         if (NewMat != null)
         {
-            print("works2");
             foodInPan.SetActive(true);
             foodInPan.GetComponent<MeshRenderer>().material = NewMat;
-            Destroy(oldForm);
+            curMat = NewMat;
+            Destroy(curFood);
             if (obj != null) Destroy(obj);
         }
-        else obj = oldForm;
-       
+        else obj = newFood;
     }
-    /*
-    void ChangeForm()
-    {
-        newForm = Instantiate(NewForm);
-        newForm.transform.parent = foodInPan.transform.parent;
-        newForm.transform.position = foodInPan.transform.position;
-        GameObject old = foodInPan;
-        Destroy(old);
-        foodInPan = newForm;
-    }
-    */
 }
