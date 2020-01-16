@@ -20,8 +20,6 @@ public class loadingbar : MonoBehaviour {
 
     float second;
     float minute;
-    float pauseSecond;
-    float pauseMinute;
 
     // Use this for initialization
     void Start () {
@@ -29,16 +27,16 @@ public class loadingbar : MonoBehaviour {
         imageComp = rectComponent.GetComponent<Image>();
         imageComp.fillAmount = 0.0f;
         cl = panTrigger.GetComponent<CookedLevel>();
-
+        on = true;
         second = 00;
         minute = 2;
-        InvokeRepeating("RunTimer2", -1, 1);
+        InvokeRepeating("RunTimer", 1, 1);
     }
 
     void Update()
     {
-        if (timerText.text != "02:00" && timerText.text != "00:00") on = true;
-        else on = false;
+        //if (timerText.text != "02 : 00" && timerText.text != "00 : 00") on = true;
+        //else on = false;
         level = cl.getLevel();
         size = cl.getSize();
         float len = (float) 1f / size * level;
@@ -53,23 +51,20 @@ public class loadingbar : MonoBehaviour {
                 imageComp.fillAmount = 0.0f;
             }
         }
-        
+        if (timerText.text == "00 : 00") on = false;
     }
 
-    void RunTimer2()
+    void RunTimer()
     {
-        on = true;
-        if (on == true)
+        if (on)
         {
             second--;
-            if (second == 00)
+            if (second == -1)
             {
                 second = 59;
                 minute--;
             }
-        }
-
-        timerText.text = $"{minute:00} : {second:00}";
-        
+        } 
+            timerText.text = $"{minute:00} : {second:00}";
     }
 }

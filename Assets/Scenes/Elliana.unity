@@ -8938,6 +8938,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1498744150306157067, guid: 2602502a6d63c7647a60ccdacc54ce18,
+        type: 3}
+      propertyPath: m_Text
+      value: '02 : 00'
+      objectReference: {fileID: 0}
     - target: {fileID: 1498744150346597306, guid: 2602502a6d63c7647a60ccdacc54ce18,
         type: 3}
       propertyPath: panTrigger
