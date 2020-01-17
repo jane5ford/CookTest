@@ -72,7 +72,7 @@ public class PanCooking : MonoBehaviour
             newFood = other.gameObject;
             switch (other.name)
             {
-                case "OnionPiece":
+                case "OnionPieces":
                     if (recipe == 0)
                         quality = wrong;
                     else
@@ -135,6 +135,68 @@ public class PanCooking : MonoBehaviour
                     break;
                 default:
                     quality = wrong;
+                    break;
+
+                case "OnionPieces(Clone)":
+                    if (recipe == 0)
+                        quality = wrong;
+                    else
+                    {
+                        if (count == 0) quality = perfect;
+                        else quality = good;
+                    }
+                    break;
+                case "GarlicPiece(Clone)":
+                    if (recipe == 0)
+                        quality = wrong;
+                    else
+                    {
+                        if (count == 1) quality = perfect;
+                        else quality = good;
+                    }
+                    break;
+                case "Meat(Clone)":
+                    if (curMat == Tomatoes) NewMat = MeatAndTomatoes;
+                    else NewMat = Meat;
+                    if (recipe == 0)
+                        quality = wrong;
+                    else
+                    {
+                        if (count == 2) quality = perfect;
+                        else quality = good;
+                    }
+                    break;
+                case "TomatoPiece(Clone)":
+                    if (curMat == Meat) NewMat = MeatAndTomatoes;
+                    else if (curMat != MeatAndTomatoes) NewMat = Tomatoes;
+                    if (recipe == 0)
+                        quality = wrong;
+                    else
+                    {
+                        if (count == 3) quality = perfect;
+                        else quality = good;
+                    }
+                    break;
+                case "CarrotPiece(Clone)":
+                    if (recipe == 0)
+                        quality = wrong;
+                    else
+                    {
+                        if (count == 4) quality = perfect;
+                        else quality = good;
+                    }
+                    break;
+
+                case "NoodleInPan(Clone)":
+                    NewMat = Noodles;
+                    if (recipe == 0)
+                        quality = perfect;
+                    else quality = wrong;
+                    break;
+                case "HamPieces(Clone)":
+                    if (recipe == 0)
+                        quality = perfect;
+                    else quality = wrong;
                     break;
             }
             //print(newFood.transform.parent.name);
