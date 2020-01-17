@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class PanTilting : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Pan")
+        {
+            other.transform.rotation = 
+        }
     }
 }
