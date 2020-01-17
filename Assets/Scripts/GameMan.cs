@@ -77,7 +77,7 @@ public class GameMan : MonoBehaviour
 
     public void RecipeGeneration()
     {
-        numRecipe = Random.Range(1, 3);
+        numRecipe = 2;//Random.Range(1, 3);
         pc.SetRecipe(numRecipe);
         file = Application.dataPath + "/" + numRecipe.ToString() + ".txt";
         string textRec = File.ReadAllText(file);
