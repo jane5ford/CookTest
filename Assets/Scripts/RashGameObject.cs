@@ -16,6 +16,7 @@ public class RashGameObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //print()
         if (transform.eulerAngles.z >= angleMin && transform.eulerAngles.z < angleMax)
         {
             RashingObject.transform.parent = gameObject.transform.parent;

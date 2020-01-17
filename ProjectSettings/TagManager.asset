@@ -15,6 +15,7 @@ TagManager:
   - Filling
   - Piece
   - ForPan
+  - Food
   layers:
   - Default
   - TransparentFX

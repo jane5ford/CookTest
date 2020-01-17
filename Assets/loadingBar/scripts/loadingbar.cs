@@ -58,6 +58,7 @@ public class loadingbar : MonoBehaviour {
             panTrigger.transform.parent.gameObject.GetComponent<Rigidbody>().isKinematic = false;
             panTrigger.transform.parent.gameObject.GetComponent<MeshCollider>().convex = true;
         }
+        
     }
 
     void RunTimer()

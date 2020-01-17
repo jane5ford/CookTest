@@ -28,7 +28,7 @@ public class Grate : MonoBehaviour
 
     void Update()
     {
-        if (grate && onBoard && i < 50)
+        if (grate && onBoard && i < 100)
         {
             whole.transform.localScale = new Vector3(whole.transform.localScale.x * (1 - step), wholeScale, wholeScale);
             //float increase = 2 * Time.deltaTime;

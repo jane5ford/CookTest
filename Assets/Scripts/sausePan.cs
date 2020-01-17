@@ -7,7 +7,10 @@ public class sausePan : MonoBehaviour
     public GameObject noodle;
     public GameObject wrongFood;
     private GameObject NewForm;
+    [SerializeField]
     private GameObject newForm;
+    [SerializeField]
+    private GameObject steam;
     private CookedLevel cl;
     float defaultScale;
     float defaultScale2;
@@ -36,6 +39,8 @@ public class sausePan : MonoBehaviour
                     Destroy(food);
                     transform.parent.GetComponent<MeshCollider>().convex = true;
                     transform.parent.GetComponent<Rigidbody>().isKinematic = false;
+                    GetComponent<CookedLevel>().turnOn(false);
+                    steam.SetActive(false);
                 }               
                 
             }
@@ -56,8 +61,9 @@ public class sausePan : MonoBehaviour
             if (NewForm != null && isFirst)
             {
                 print("works");
-                newForm = GameObject.Instantiate(NewForm, gameObject.transform.position, Quaternion.identity);
-                newForm.transform.parent = gameObject.transform.parent;
+                //newForm = GameObject.Instantiate(NewForm, gameObject.transform.position, Quaternion.identity);
+                newForm.SetActive(true);
+                //newForm.transform.parent = gameObject.transform.parent;
                 NewForm = null;
                 defaultScale2 = newForm.transform.localScale.z;
                 newForm.transform.localScale = new Vector3(defaultScale2 / 10, defaultScale2 / 10, defaultScale2 / 10);
@@ -74,6 +80,9 @@ public class sausePan : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        food = other.gameObject;
+        if (other.tag == "ForPan")
+        {
+            food = other.gameObject;
+        }
     }
 }

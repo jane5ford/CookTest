@@ -77,7 +77,7 @@ public class Cut : MonoBehaviour
     {
         if (other.tag == "Board")
         {
-            onBoard = false;
+            //onBoard = false;
             print(onBoard);
         }
     }

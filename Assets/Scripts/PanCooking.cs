@@ -67,103 +67,107 @@ public class PanCooking : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        newFood = other.gameObject;
-        switch (other.name)
+        if (other.tag == "ForPan")
         {
-            case "OnionPiece":
-                if (recipe == 0)
-                    quality = wrong;
-                else {
-                    if (count == 0) quality = perfect;
-                    else quality = good;
-                }
-                break;
-            case "GarlicPiece":
-                if (recipe == 0)
-                    quality = wrong;
-                else
-                {
-                    if (count == 1) quality = perfect;
-                    else quality = good;
-                }
-                break;
-            case "Meat":
-                if (curMat == Tomatoes) NewMat = MeatAndTomatoes; 
-                else NewMat = Meat;
-                if (recipe == 0)
-                    quality = wrong;
-                else
-                {
-                    if (count == 2) quality = perfect;
-                    else quality = good;
-                }
-                break;
-            case "TomatoPiece":
-                if (curMat == Meat) NewMat = MeatAndTomatoes; 
-                else if (curMat != MeatAndTomatoes) NewMat = Tomatoes;
-                if (recipe == 0)
-                    quality = wrong;
-                else
-                {
-                    if (count == 3) quality = perfect;
-                    else quality = good;
-                }
-                break;
-            case "CarrotPiece":
-                if (recipe == 0)
-                    quality = wrong;
-                else
-                {
-                    if (count == 4) quality = perfect;
-                    else quality = good;
-                }
-                break;
-
-            case "NoodleInPan":
-                NewMat = Noodles;
-                if (recipe == 0)
-                    quality = perfect;
-                else quality = wrong;
-                break;
-            case "HamPieces":
-                if (recipe == 0)
-                    quality = perfect;
-                else quality = wrong;
-                break;
-            default:
-                quality = wrong;
-                break;
-        }
-        //print(newFood.transform.parent.name);
-        if (newFood != curFood && newFood.transform.parent != transform.parent)
-        {
-            curFood = newFood;
-            curFood.transform.parent = pan.transform;
-            if (quality != wrong)
+            newFood = other.gameObject;
+            switch (other.name)
             {
-                count++;
-                cl.setLevel(count);
-                result += (100 / recCount);
-            }
+                case "OnionPiece":
+                    if (recipe == 0)
+                        quality = wrong;
+                    else
+                    {
+                        if (count == 0) quality = perfect;
+                        else quality = good;
+                    }
+                    break;
+                case "GarlicPiece":
+                    if (recipe == 0)
+                        quality = wrong;
+                    else
+                    {
+                        if (count == 1) quality = perfect;
+                        else quality = good;
+                    }
+                    break;
+                case "Meat":
+                    if (curMat == Tomatoes) NewMat = MeatAndTomatoes;
+                    else NewMat = Meat;
+                    if (recipe == 0)
+                        quality = wrong;
+                    else
+                    {
+                        if (count == 2) quality = perfect;
+                        else quality = good;
+                    }
+                    break;
+                case "TomatoPiece":
+                    if (curMat == Meat) NewMat = MeatAndTomatoes;
+                    else if (curMat != MeatAndTomatoes) NewMat = Tomatoes;
+                    if (recipe == 0)
+                        quality = wrong;
+                    else
+                    {
+                        if (count == 3) quality = perfect;
+                        else quality = good;
+                    }
+                    break;
+                case "CarrotPiece":
+                    if (recipe == 0)
+                        quality = wrong;
+                    else
+                    {
+                        if (count == 4) quality = perfect;
+                        else quality = good;
+                    }
+                    break;
 
-            if (count == 1)
+                case "NoodleInPan":
+                    NewMat = Noodles;
+                    if (recipe == 0)
+                        quality = perfect;
+                    else quality = wrong;
+                    break;
+                case "HamPieces":
+                    if (recipe == 0)
+                        quality = perfect;
+                    else quality = wrong;
+                    break;
+                default:
+                    quality = wrong;
+                    break;
+            }
+            //print(newFood.transform.parent.name);
+            if (newFood != curFood && newFood.transform.parent != transform.parent)
             {
-                cl.turnOn(true);
-            }
+                curFood = newFood;
+                curFood.transform.parent = pan.transform;
+                if (quality != wrong)
+                {
+                    count++;
+                    cl.setLevel(count);
+                    result += (100 / recCount);
+                }
 
-            result *= quality;
-            print("Quality: "+result);
+                if (count == 1)
+                {
+                    cl.turnOn(true);
+                }
+
+                result *= quality;
+                print("Quality: " + result);
+            }
+            //print("still " + count);
+            if (quality == wrong) NewMat = DefFood;
+            if (NewMat != null)
+            {
+                foodInPan.SetActive(true);
+                foodInPan.GetComponent<MeshRenderer>().material = NewMat;
+                curMat = NewMat;
+                Destroy(curFood);
+                if (obj != null) Destroy(obj);
+            }
+            else obj = newFood;
         }
-        //print("still " + count);
-        if (quality == wrong) NewMat = DefFood;
-        if (NewMat != null)
-        {
-            foodInPan.SetActive(true);
-            foodInPan.GetComponent<MeshRenderer>().material = NewMat;
-            curMat = NewMat;
-            Destroy(curFood);
-            if (obj != null) Destroy(obj);
-        }
-        else obj = newFood;
     }
 }
