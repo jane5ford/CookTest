@@ -46,7 +46,7 @@ public class PanCooking : MonoBehaviour
     private int count = 0;
     private int recCount = 5;
     public float result;
-    private string nameCF;
+    private string[] namesCF;
     
 
     // Start is called before the first frame update
@@ -56,6 +56,7 @@ public class PanCooking : MonoBehaviour
         if (recipe == 1) recCount = 5;
         cl = GetComponent<CookedLevel>();
         cl.setSize(recCount);
+        namesCF = new string[recCount];
         pan = transform.parent.gameObject;
     }
 
@@ -238,16 +239,22 @@ public class PanCooking : MonoBehaviour
             if (newFood != curFood && newFood.transform.parent != transform.parent)
             {
                 if (curFood != null) print(curFood.name + ",, " + newFood.name);
-                if (((nameCF != null) && (newFood.name != nameCF)) || (nameCF == null))
+                bool hasName = false;
+                for (int i = 0; i < namesCF.Length; i++)
                 {
-                    
+                    if ((namesCF[i] != null) && ((newFood.name != namesCF[i]) || (newFood.name + "(Clone)" != namesCF[i]) || (newFood.name != namesCF[i] + "(Clone)")))
+                    { hasName = true; break;  }
+                }
+                if ( !hasName )
+                {
                     curFood = newFood;
-                    nameCF = curFood.name;
+                    
                     curFood.transform.parent = pan.transform;
                     if (quality != wrong)
                     {
                         print("ok");
                         count++;
+                        namesCF[count] = curFood.name;
                         cl.setLevel(count);
                         print(recCount);
                         result += (100 / recCount);
