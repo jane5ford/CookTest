@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     public GameObject menu;
+    public GameObject player;
 
     private void Start()
     {
@@ -15,6 +16,7 @@ public class MenuManager : MonoBehaviour
     public void PlayPressed()
     {
         Debug.Log("Play pressed!");
+        Destroy(player);
         SceneManager.LoadScene("Elliana");
     }
 
