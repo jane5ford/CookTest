@@ -27,6 +27,10 @@ public class GameMan : MonoBehaviour
 
     [SerializeField]
     GameObject PanTrig;
+
+    [SerializeField]
+    private Image ind;
+
     [SerializeField]
     PanCooking pc;
 
@@ -42,6 +46,15 @@ public class GameMan : MonoBehaviour
         panel.SetActive(true);
         RecipeGeneration();
         Timer();
+    }
+
+    private void Update()
+    {
+        if (ind.fillAmount == 1f)
+        {
+            PauseGame();
+            GameOver();
+        }
     }
 
     public void PlayGame()
@@ -97,7 +110,7 @@ public class GameMan : MonoBehaviour
         }
 
         time.text = $"{minute:00} : {second:00}";
-        if (minute == 2f && second == 30f)
+        if (minute == 4f)
         {
             PauseGame();
             GameOver();
