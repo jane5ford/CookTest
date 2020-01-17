@@ -47,14 +47,11 @@ public class PanCooking : MonoBehaviour
     private int recCount;
     public float result;
 
-    [SerializeField]
-    GameObject gameM;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        recipe = gameM.GetComponent<GameMan>().GetRecipe()-1;
-        print(recipe);
         if (recipe == 0) recCount = 6;
         if (recipe == 1) recCount = 5;
         cl = GetComponent<CookedLevel>();
@@ -68,7 +65,8 @@ public class PanCooking : MonoBehaviour
         
     }
 
-    public void SetReciep(int i) { this.recipe = i; }
+    public void SetRecipe(int i) { this.recipe = i; print(recipe);
+    }
 
     private void OnTriggerEnter(Collider other)
     {

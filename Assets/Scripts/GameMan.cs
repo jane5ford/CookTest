@@ -26,8 +26,10 @@ public class GameMan : MonoBehaviour
 
     [SerializeField]
     GameObject PanTrig;
+    [SerializeField]
+    PanCooking pc;
 
-    int numRecipe;
+    public int numRecipe;
     string file;
 
     private string currentRecipe;
@@ -64,6 +66,7 @@ public class GameMan : MonoBehaviour
     public void RecipeGeneration()
     {
         numRecipe = Random.Range(1, 3);
+        pc.SetRecipe(numRecipe);
         file = Application.dataPath + "/" + numRecipe.ToString() + ".txt";
         string textRec = File.ReadAllText(file);
         recipe.text = textRec;
