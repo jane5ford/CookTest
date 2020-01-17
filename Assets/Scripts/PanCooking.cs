@@ -53,7 +53,8 @@ public class PanCooking : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        recipe = gameM.GetComponent<GameManager>().GetRecipe();
+        recipe = gameM.GetComponent<GameMan>().GetRecipe()-1;
+        print(recipe);
         if (recipe == 0) recCount = 6;
         if (recipe == 1) recCount = 5;
         cl = GetComponent<CookedLevel>();
@@ -156,22 +157,14 @@ public class PanCooking : MonoBehaviour
                     break;
 
                 case "OnionPieces(Clone)":
-                    if (recipe == 0)
-                        quality = wrong;
-                    else
-                    {
-                        if (count == 0) quality = perfect;
-                        else quality = good;
-                    }
+                    quality = perfect;
+                    if (count == 0) quality = perfect;
+                    else quality = good;
                     break;
                 case "GarlicPiece(Clone)":
-                    if (recipe == 0)
-                        quality = wrong;
-                    else
-                    {
-                        if (count == 1) quality = perfect;
-                        else quality = good;
-                    }
+                    quality = perfect;
+                    if (count == 1) quality = perfect;
+                    else quality = good;
                     break;
                 case "Meat(Clone)":
                     if (curMat == Tomatoes) NewMat = MeatAndTomatoes;
