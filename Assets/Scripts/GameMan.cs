@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
 
-public class GameManager : MonoBehaviour
+public class GameMan : MonoBehaviour
 {
     public GameObject menu;
     public GameObject pauseMenu;
