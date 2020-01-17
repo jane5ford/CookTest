@@ -14,6 +14,8 @@ public class loadingbar : MonoBehaviour {
     private int level;
     private int size;
 
+    public GameObject panel;
+
     private CookedLevel cl;
     private RectTransform rectComponent;
     private Image imageComp;
@@ -63,7 +65,7 @@ public class loadingbar : MonoBehaviour {
 
     void RunTimer()
     {
-        if (cl.isTurn())
+        if (cl.isTurn() || panel.activeInHierarchy)
         {
             second--;
             if (second == -1)
