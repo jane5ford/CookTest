@@ -119,7 +119,7 @@ public class PanCooking : MonoBehaviour
 
                 
                 case "HamPieces":
-                    if (recipe == 2)
+                    if (recipe == 0)
                     {
                         if (count == 2) quality = perfect;
                         else quality = good;
@@ -235,7 +235,7 @@ public class PanCooking : MonoBehaviour
                     break;
             }
             //print(newFood.transform.parent.name);
-            if (newFood != curFood && newFood.transform.parent != transform.parent)
+            if (newFood != curFood && newFood.transform.parent != transform.parent && newFood.name != curFood.name)
             {
                 curFood = newFood;
                 curFood.transform.parent = pan.transform;

@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 7637598582790787935}
   - component: {fileID: 475387853237689982}
   m_Layer: 0
-  m_Name: CarrotHalf
+  m_Name: CarrotPiece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

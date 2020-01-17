@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 3121474680142522954}
   - component: {fileID: 3121474680142522955}
   m_Layer: 0
-  m_Name: GarlicHalf
+  m_Name: GarlicPiece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

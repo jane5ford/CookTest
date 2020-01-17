@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3139744827735797831}
   - component: {fileID: 3139744827735797832}
   m_Layer: 0
-  m_Name: Ham_half
+  m_Name: HamPieces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

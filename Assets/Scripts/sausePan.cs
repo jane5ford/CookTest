@@ -11,6 +11,8 @@ public class sausePan : MonoBehaviour
     private GameObject newForm;
     [SerializeField]
     private GameObject steam;
+    [SerializeField]
+    private GameObject water;
     private CookedLevel cl;
     float defaultScale;
     float defaultScale2;
@@ -41,6 +43,7 @@ public class sausePan : MonoBehaviour
                     transform.parent.GetComponent<Rigidbody>().isKinematic = false;
                     GetComponent<CookedLevel>().turnOn(false);
                     steam.SetActive(false);
+                    water.SetActive(false);
                 }               
                 
             }
