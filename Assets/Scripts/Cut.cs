@@ -53,6 +53,7 @@ public class Cut : MonoBehaviour
                 print("1");
                 whole.SetActive(false);
                 half.SetActive(true);
+                half.GetComponent<MeshCollider>().enabled = true;
                 piece.SetActive(true);
                 piece.transform.parent = transform.parent;
 
@@ -77,7 +78,7 @@ public class Cut : MonoBehaviour
     {
         if (other.tag == "Board")
         {
-            //onBoard = false;
+            onBoard = false;
             print(onBoard);
         }
     }

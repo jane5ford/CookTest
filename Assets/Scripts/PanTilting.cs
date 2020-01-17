@@ -18,7 +18,7 @@ public class PanTilting : MonoBehaviour
     {
         if (other.tag == "Pan")
         {
-            other.transform.rotation = 
+            
         }
     }
 }
