@@ -33,8 +33,6 @@ public class GameMan : MonoBehaviour
     public int numRecipe;
     string file;
 
-    private string currentRecipe;
-
     private void Start()
     {
         room.SetActive(true);
@@ -99,8 +97,9 @@ public class GameMan : MonoBehaviour
         }
 
         time.text = $"{minute:00} : {second:00}";
-        if (minute == 5f)
+        if (minute == 2f && second == 30f)
         {
+            PauseGame();
             GameOver();
         }
     }
@@ -108,11 +107,10 @@ public class GameMan : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Game over");
+        room.SetActive(false);
         menu.SetActive(true);
         pauseMenu.SetActive(false);
         gameOver_Menu.SetActive(true);
-        pauseSecond = second;
-        pauseMinute = minute;
         resultTime.text = "Время готовки: " + $"{pauseMinute:00} : {pauseSecond:00}";
         _result = Mathf.RoundToInt(PanTrig.GetComponent<PanCooking>().result);
         resultPers.text = "Качество блюда: " + _result.ToString() + " %";

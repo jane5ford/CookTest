@@ -242,8 +242,9 @@ public class PanCooking : MonoBehaviour
                 bool hasName = false;
                 for (int i = 0; i < namesCF.Length; i++)
                 {
-                    if ((namesCF[i] != null) && ((newFood.name != namesCF[i]) || (newFood.name + "(Clone)" != namesCF[i]) || (newFood.name != namesCF[i] + "(Clone)")))
-                    { hasName = true; break;  }
+                    if ((namesCF[i] != null) && ((newFood.name == namesCF[i]) || (newFood.name + "(Clone)" == namesCF[i]) || (newFood.name == namesCF[i] + "(Clone)")))
+                    { hasName = true; break; }
+                    else hasName = false;
                 }
                 if ( !hasName )
                 {
