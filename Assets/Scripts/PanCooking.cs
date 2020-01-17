@@ -20,6 +20,8 @@ public class PanCooking : MonoBehaviour
     [SerializeField]
     Material Noodles;
     [SerializeField]
+    Material Cream;
+    [SerializeField]
     Material DefFood;
 
     Material curMat;
@@ -52,7 +54,7 @@ public class PanCooking : MonoBehaviour
     void Start()
     {
         recipe = gameM.GetComponent<GameManager>().GetRecipe();
-        if (recipe == 0) recCount = 4;
+        if (recipe == 0) recCount = 6;
         if (recipe == 1) recCount = 5;
         cl = GetComponent<CookedLevel>();
         cl.setSize(recCount);
@@ -75,22 +77,14 @@ public class PanCooking : MonoBehaviour
             switch (other.name)
             {
                 case "OnionPieces":
-                    if (recipe == 0)
-                        quality = wrong;
-                    else
-                    {
-                        if (count == 0) quality = perfect;
-                        else quality = good;
-                    }
+                    quality = perfect;
+                    if (count == 0) quality = perfect;
+                    else quality = good;
                     break;
                 case "GarlicPiece":
-                    if (recipe == 0)
-                        quality = wrong;
-                    else
-                    {
-                        if (count == 1) quality = perfect;
-                        else quality = good;
-                    }
+                    quality = perfect;
+                    if (count == 1) quality = perfect;
+                    else quality = good;
                     break;
                 case "Meat":
                     if (curMat == Tomatoes) NewMat = MeatAndTomatoes;
@@ -124,19 +118,41 @@ public class PanCooking : MonoBehaviour
                     }
                     break;
 
+                
+                case "HamPieces":
+                    if (recipe == 2)
+                    {
+                        if (count == 2) quality = perfect;
+                        else quality = good;
+                    }
+                    else quality = wrong;
+                    break;
+               
+                case "CreamAndEggs":
+                    NewMat = Cream;
+                    if (recipe == 0)
+                    {
+                        if (count == 3) quality = perfect;
+                        else quality = good;
+                    }
+                    else quality = wrong;
+                    break;
                 case "NoodleInPan":
                     NewMat = Noodles;
                     if (recipe == 0)
-                        quality = perfect;
+                    {
+                        if (count == 4) quality = perfect;
+                        else quality = good;
+                    }
                     else quality = wrong;
                     break;
-                case "HamPieces":
+                case "CheesePiece":
                     if (recipe == 0)
-                        quality = perfect;
+                    {
+                        if (count == 5) quality = perfect;
+                        else quality = good;
+                    }
                     else quality = wrong;
-                    break;
-                default:
-                    quality = wrong;
                     break;
 
                 case "OnionPieces(Clone)":
@@ -189,16 +205,42 @@ public class PanCooking : MonoBehaviour
                     }
                     break;
 
-                case "NoodleInPan(Clone)":
-                    NewMat = Noodles;
-                    if (recipe == 0)
-                        quality = perfect;
+                case "HamPieces(clone)":
+                    if (recipe == 2)
+                    {
+                        if (count == 2) quality = perfect;
+                        else quality = good;
+                    }
                     else quality = wrong;
                     break;
-                case "HamPieces(Clone)":
+                case "CreamAndEggs(clone)":
+                    NewMat = Cream;
                     if (recipe == 0)
-                        quality = perfect;
+                    {
+                        if (count == 3) quality = perfect;
+                        else quality = good;
+                    }
                     else quality = wrong;
+                    break;
+                case "NoodleInPan(clone)":
+                    NewMat = Noodles;
+                    if (recipe == 0)
+                    {
+                        if (count == 4) quality = perfect;
+                        else quality = good;
+                    }
+                    else quality = wrong;
+                    break;
+                case "CheesePiece(clone)":
+                    if (recipe == 0)
+                    {
+                        if (count == 5) quality = perfect;
+                        else quality = good;
+                    }
+                    else quality = wrong;
+                    break;
+                default:
+                    quality = wrong;
                     break;
             }
             //print(newFood.transform.parent.name);
