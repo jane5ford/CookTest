@@ -23,6 +23,7 @@ public class GameMan : MonoBehaviour
     float minute;
     float pauseSecond;
     float pauseMinute;
+    int _result;
 
     [SerializeField]
     GameObject PanTrig;
@@ -112,8 +113,9 @@ public class GameMan : MonoBehaviour
         gameOver_Menu.SetActive(true);
         pauseSecond = second;
         pauseMinute = minute;
-        resultTime.text = $"{pauseMinute:00} : {pauseSecond:00}";
-        resultPers.text = PanTrig.GetComponent<PanCooking>().result.ToString();
+        resultTime.text = "Время готовки: " + $"{pauseMinute:00} : {pauseSecond:00}";
+        _result = Mathf.RoundToInt(PanTrig.GetComponent<PanCooking>().result);
+        resultPers.text = "Качество блюда: " + _result.ToString() + " %";
     }
 
 
