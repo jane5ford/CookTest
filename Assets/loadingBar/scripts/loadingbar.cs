@@ -65,7 +65,7 @@ public class loadingbar : MonoBehaviour {
 
     void RunTimer()
     {
-        if (cl.isTurn() || panel.activeInHierarchy)
+        if (cl.isTurn() && panel.activeInHierarchy)
         {
             second--;
             if (second == -1)

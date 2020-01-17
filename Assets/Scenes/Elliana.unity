@@ -9988,37 +9988,37 @@ PrefabInstance:
     - target: {fileID: 7783839681303127734, guid: c0081f54f180f1343b72c2a502567577,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.174
+      value: -1.173312
       objectReference: {fileID: 0}
     - target: {fileID: 7783839681303127734, guid: c0081f54f180f1343b72c2a502567577,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.015
+      value: 0.014999986
       objectReference: {fileID: 0}
     - target: {fileID: 7783839681303127734, guid: c0081f54f180f1343b72c2a502567577,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.141
+      value: 0.14158893
       objectReference: {fileID: 0}
     - target: {fileID: 7783839681303127734, guid: c0081f54f180f1343b72c2a502567577,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7783839681303127734, guid: c0081f54f180f1343b72c2a502567577,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 7783839681303127734, guid: c0081f54f180f1343b72c2a502567577,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7783839681303127734, guid: c0081f54f180f1343b72c2a502567577,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 7783839681303127734, guid: c0081f54f180f1343b72c2a502567577,
         type: 3}
@@ -10033,7 +10033,7 @@ PrefabInstance:
     - target: {fileID: 7783839681303127734, guid: c0081f54f180f1343b72c2a502567577,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7783839681303127734, guid: c0081f54f180f1343b72c2a502567577,
         type: 3}
@@ -13272,6 +13272,11 @@ PrefabInstance:
       propertyPath: game
       value: 
       objectReference: {fileID: 975343768}
+    - target: {fileID: 5244639326368637711, guid: 0cdfe29755d6cbb4ea546f0f48df814c,
+        type: 3}
+      propertyPath: gameM
+      value: 
+      objectReference: {fileID: 975343767}
     - target: {fileID: 7396288163263301480, guid: 0cdfe29755d6cbb4ea546f0f48df814c,
         type: 3}
       propertyPath: m_Name
