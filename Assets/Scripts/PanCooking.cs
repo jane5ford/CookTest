@@ -44,9 +44,9 @@ public class PanCooking : MonoBehaviour
     private CookedLevel cl;
     public string[] chain;
     private int count = 0;
-    private int recCount;
+    private int recCount = 5;
     public float result;
-
+    private string nameCF;
     
 
     // Start is called before the first frame update
@@ -234,17 +234,22 @@ public class PanCooking : MonoBehaviour
                     break;
             }
             //print(newFood.transform.parent.name);
-
+            print(curFood);
             if (newFood != curFood && newFood.transform.parent != transform.parent)
             {
-                if (((curFood) && (newFood.name == curFood.name)) || (curFood == null))
+                if (curFood != null) print(curFood.name + ",, " + newFood.name);
+                if (((nameCF != null) && (newFood.name != nameCF)) || (nameCF == null))
                 {
+                    
                     curFood = newFood;
+                    nameCF = curFood.name;
                     curFood.transform.parent = pan.transform;
                     if (quality != wrong)
                     {
+                        print("ok");
                         count++;
                         cl.setLevel(count);
+                        print(recCount);
                         result += (100 / recCount);
                     }
 
@@ -257,6 +262,7 @@ public class PanCooking : MonoBehaviour
                     print("Quality: " + result);
                 }
             }
+            print(recCount);
             //print("still " + count);
             if (quality == wrong) NewMat = DefFood;
             if (NewMat != null)
