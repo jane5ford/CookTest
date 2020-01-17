@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     float pauseSecond;
     float pauseMinute;
 
+    [SerializeField]
+    GameObject PanTrig;
+
     int numRecipe;
     string file;
 
@@ -107,6 +110,7 @@ public class GameManager : MonoBehaviour
         pauseSecond = second;
         pauseMinute = minute;
         resultTime.text = $"{pauseMinute:00} : {pauseSecond:00}";
+        resultPers.text = PanTrig.GetComponent<PanCooking>().result.ToString();
     }
 
 
@@ -115,5 +119,10 @@ public class GameManager : MonoBehaviour
         Debug.Log("End game pressed!");
         Destroy(player);
         SceneManager.LoadScene("Menu");
+    }
+
+    public int GetRecipe()
+    {
+        return numRecipe;
     }
 }

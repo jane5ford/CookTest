@@ -43,18 +43,20 @@ public class PanCooking : MonoBehaviour
     public string[] chain;
     private int count = 0;
     private int recCount;
-    private float result;
+    public float result;
+
+    [SerializeField]
+    GameManager game;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-        recipe = 1;
+        recipe = game.GetRecipe();
         if (recipe == 0) recCount = 4;
         if (recipe == 1) recCount = 5;
         cl = GetComponent<CookedLevel>();
         cl.setSize(recCount);
         pan = transform.parent.gameObject;
-        
     }
 
     // Update is called once per frame
