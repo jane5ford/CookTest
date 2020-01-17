@@ -2407,6 +2407,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &256936654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3116656742161058297, guid: c0081f54f180f1343b72c2a502567577,
+    type: 3}
+  m_PrefabInstance: {fileID: 1038860594}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &263957004 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2780802730083515981, guid: ccbc2a0d74a3b6b4c82e6c7e1bb3bfcf,
@@ -8941,12 +8947,17 @@ PrefabInstance:
         type: 3}
       propertyPath: panTrigger
       value: 
-      objectReference: {fileID: 1414574856}
+      objectReference: {fileID: 256936654}
     - target: {fileID: 7980273018536320853, guid: 2602502a6d63c7647a60ccdacc54ce18,
         type: 3}
       propertyPath: panel
       value: 
       objectReference: {fileID: 1957580074}
+    - target: {fileID: 7980273018575662822, guid: 2602502a6d63c7647a60ccdacc54ce18,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2602502a6d63c7647a60ccdacc54ce18, type: 3}
 --- !u!1 &975343767
@@ -8988,7 +8999,7 @@ MonoBehaviour:
   player: {fileID: 881091678}
   resultPers: {fileID: 1563512592}
   resultTime: {fileID: 1736816127}
-  PanTrig: {fileID: 0}
+  PanTrig: {fileID: 1414574856}
 --- !u!4 &975343769
 Transform:
   m_ObjectHideFlags: 0
