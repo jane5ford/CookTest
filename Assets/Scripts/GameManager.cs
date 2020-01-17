@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public Text time;
     public GameObject room;
 
+    public GameObject player;
+
     public Text resultPers;
     public Text resultTime;
 
@@ -111,7 +113,7 @@ public class GameManager : MonoBehaviour
     public void EndGamePressed()
     {
         Debug.Log("End game pressed!");
-        
+        Destroy(player);
         SceneManager.LoadScene("Menu");
     }
 }

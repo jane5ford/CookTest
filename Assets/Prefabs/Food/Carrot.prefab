@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 5721112102718916794}
   m_Layer: 0
   m_Name: CarrotPiece
-  m_TagString: Untagged
+  m_TagString: ForPan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
