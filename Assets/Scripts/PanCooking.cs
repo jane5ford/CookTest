@@ -65,8 +65,7 @@ public class PanCooking : MonoBehaviour
         
     }
 
-    public void SetRecipe(int i) { this.recipe = i; print(recipe);
-    }
+    public void SetRecipe(int i) { this.recipe = i;}
 
     private void OnTriggerEnter(Collider other)
     {
@@ -235,24 +234,28 @@ public class PanCooking : MonoBehaviour
                     break;
             }
             //print(newFood.transform.parent.name);
-            if (newFood != curFood && newFood.transform.parent != transform.parent && newFood.name != curFood.name)
+
+            if (newFood != curFood && newFood.transform.parent != transform.parent)
             {
-                curFood = newFood;
-                curFood.transform.parent = pan.transform;
-                if (quality != wrong)
+                if (((curFood) && (newFood.name == curFood.name)) || (curFood == null))
                 {
-                    count++;
-                    cl.setLevel(count);
-                    result += (100 / recCount);
-                }
+                    curFood = newFood;
+                    curFood.transform.parent = pan.transform;
+                    if (quality != wrong)
+                    {
+                        count++;
+                        cl.setLevel(count);
+                        result += (100 / recCount);
+                    }
 
-                if (count == 1)
-                {
-                    cl.turnOn(true);
-                }
+                    if (count == 1)
+                    {
+                        cl.turnOn(true);
+                    }
 
-                result *= quality;
-                print("Quality: " + result);
+                    result *= quality;
+                    print("Quality: " + result);
+                }
             }
             //print("still " + count);
             if (quality == wrong) NewMat = DefFood;
